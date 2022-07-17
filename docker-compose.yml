@@ -1,7 +1,11 @@
 version: "3.8"
 services:
   web:
-    image: nginx:1.19
+    build: ./nginx
     ports:
       - "80:80"
+  app:
+    image: php:7.4-fpm
+    volumes:
+      - ".app/webroot:/app"
       
